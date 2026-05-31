@@ -11,10 +11,10 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://michmela44.github.io',
+  baseUrl: '/V1EngineeringInc-Docs/',
 
-  organizationName: 'V1EngineeringInc',
+  organizationName: 'michmela44',
   projectName: 'V1EngineeringInc-Docs',
 
   onBrokenLinks: 'warn',
