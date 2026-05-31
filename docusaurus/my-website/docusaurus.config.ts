@@ -32,6 +32,7 @@ const config: Config = {
         path: 'docs/lowrider',
         routeBasePath: 'lowrider',
         sidebarPath: './sidebars-lowrider.ts',
+        editUrl: 'https://github.com/michmela44/V1EngineeringInc-Docs/edit/Docusaurus/docusaurus/my-website/',
         lastVersion: 'current',
         versions: {
           current: {
@@ -50,6 +51,7 @@ const config: Config = {
         path: 'docs/mpcnc',
         routeBasePath: 'mpcnc',
         sidebarPath: './sidebars-mpcnc.ts',
+        editUrl: 'https://github.com/michmela44/V1EngineeringInc-Docs/edit/Docusaurus/docusaurus/my-website/',
         lastVersion: 'current',
         versions: {
           current: {label: 'Current (Primo)'},
@@ -64,6 +66,7 @@ const config: Config = {
         path: 'docs/mp3dp',
         routeBasePath: 'mp3dp',
         sidebarPath: './sidebars-mp3dp.ts',
+        editUrl: 'https://github.com/michmela44/V1EngineeringInc-Docs/edit/Docusaurus/docusaurus/my-website/',
         lastVersion: 'current',
         versions: {
           current: {label: 'Current (V5)'},
