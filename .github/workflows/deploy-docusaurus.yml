@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - master
+      - Docusaurus
     paths:
       - 'docusaurus/**'
+      - '.github/workflows/deploy-docusaurus.yml'
   workflow_dispatch:
 
 permissions:
