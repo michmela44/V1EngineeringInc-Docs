@@ -119,7 +119,7 @@ const config: Config = {
           position: 'left',
           label: 'MP3DP',
         },
-        // Conditional version dropdowns — each only appears when viewing that machine's section
+        // Version dropdowns — each only appears when viewing that machine's docs
         {
           type: 'custom-docsVersionDropdown',
           docsPluginId: 'lowrider',

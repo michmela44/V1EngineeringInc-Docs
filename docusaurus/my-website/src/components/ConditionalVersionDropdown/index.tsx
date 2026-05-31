@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import DocsVersionDropdownNavbarItem from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
 
 interface Props {
@@ -13,7 +14,10 @@ interface Props {
 
 export default function ConditionalVersionDropdown({ routeBasePath, ...rest }: Props): React.ReactElement | null {
   const { pathname } = useLocation();
-  if (!pathname.startsWith(`/${routeBasePath}`)) {
+  const { siteConfig } = useDocusaurusContext();
+  const baseUrl = siteConfig.baseUrl;
+  // Check if pathname is within this plugin's route, accounting for baseUrl
+  if (!pathname.startsWith(`${baseUrl}${routeBasePath}`)) {
     return null;
   }
   return (
