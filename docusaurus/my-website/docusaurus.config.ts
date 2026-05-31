@@ -77,6 +77,21 @@ const config: Config = {
         },
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'zenxy',
+        path: 'docs/zenxy',
+        routeBasePath: 'zenxy',
+        sidebarPath: './sidebars-zenxy.ts',
+        editUrl: 'https://github.com/michmela44/V1EngineeringInc-Docs/edit/Docusaurus/docusaurus/my-website/',
+        lastVersion: 'current',
+        versions: {
+          current: {label: 'Current (v2)'},
+          v1: {label: 'v1'},
+        },
+      },
+    ],
   ],
 
   presets: [
@@ -122,6 +137,13 @@ const config: Config = {
           position: 'left',
           label: 'MP3DP',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'zenxySidebar',
+          docsPluginId: 'zenxy',
+          position: 'left',
+          label: 'ZenXY',
+        },
         // Version dropdowns — each only appears when viewing that machine's docs
         {
           type: 'custom-docsVersionDropdown',
@@ -142,6 +164,12 @@ const config: Config = {
           position: 'right',
         },
         {
+          type: 'custom-docsVersionDropdown',
+          docsPluginId: 'zenxy',
+          routeBasePath: 'zenxy',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/V1EngineeringInc/V1EngineeringInc-Docs',
           label: 'GitHub',
           position: 'right',
@@ -157,6 +185,7 @@ const config: Config = {
             {label: 'LowRider', to: '/lowrider/intro'},
             {label: 'MPCNC', to: '/mpcnc/intro'},
             {label: 'MP3DP', to: '/mp3dp/intro'},
+            {label: 'ZenXY', to: '/zenxy/intro'},
           ],
         },
         {

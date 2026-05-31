@@ -37,6 +37,13 @@ const machines: MachineCard[] = [
       'The Milled/Printed 3D Printer. A CoreXY printer with CNC-milled plates for rigidity and 3D printed parts where it counts.',
     link: '/mp3dp/intro',
   },
+  {
+    title: 'ZenXY',
+    image: '/img/old/2021/03/XZXY-V2F-squarer.jpg',
+    description:
+      'An automated sand table inspired by Sisyphus Tables. Uses a CoreXY belting system to draw mesmerizing patterns in sand or baking soda.',
+    link: '/zenxy/intro',
+  },
 ];
 
 function MachineCardComponent({title, image, description, link}: MachineCard) {
