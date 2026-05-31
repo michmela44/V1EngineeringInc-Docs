@@ -1,0 +1,153 @@
+---
+title: Parts & Where to Buy
+sidebar_position: 3
+---
+
+# Parts & Where to Buy
+
+## Flat Parts
+
+### Strut Plates
+
+Strut plates give the X axis beam its rigidity. Assemble the machine with printed temporary strut
+plates first, then use the machine to cut its own permanent plates.
+
+* Rigid material 6.35 mm (1/4") or thinner.
+* Common options: MDF, hardboard, plastic. Metal is premium and not necessary.
+
+[Vector76 Strut Generator](https://vector76.github.io/Web_OpenSCAD_Customizer/strut_plate.html) —
+Jamie made this easy-to-use site for any size you can dream of. The strut length comes from the
+[calculator](./calculator), but it cuts slightly smaller (0.5 mm) by design.
+
+* `strut_length` = value from the [calculator](./calculator)
+* `num_braces` = leave at default
+* `size of dogbone...` = leave at 3.5 for a 1/8" (3 mm) endmill
+* Check both `front_plate` and `bottom_plate`
+* `front_wing_size` = 11.5 for 29.5 mm (1" EMT conduit), or your conduit size
+* Click `Render (Ctrl+Enter)` → download `strut_plate.svg`
+
+![Strut Plate](/img/lowrider/v4/strut.png)
+
+Extra info:
+* The "Wings" are the parts that make the plate nearly touch the rails to fill in the gaps.
+* A full sheet build normally has 7 braces.
+
+### XZ Plates
+
+XZ Plates connect the X axis beam to the YZ plates.
+
+The easiest option: metal XZ plates from the [V1E.com shop](https://www.v1e.com/products/lowrider-4-aluminium-xz-plates)
+or, in the EU, from [HaWiWe](https://hawiwe.de/produkt/aluminium-xz-platten/).
+
+Other options:
+* Cut your own metal plates with the DXF files found with the printed parts. Aluminum or steel
+  1/4" (6.35 mm) thick. If using thicker/thinner material, adjust the 16 M3×10 mm screw length.
+* [Printable XZ plates](https://www.printables.com/model/1047962-printable-xz-plates-for-lowrider-4-consider-alu-in)
+  by member Aza — only recommended if you have aluminum-cutting experience on a V1 CNC.
+
+---
+
+## Specialty Parts
+
+Buy most specialty parts and hardware here: [V1 Shop](https://www.v1e.com/products/lowrider-v4-hardware-kit)
+
+| QTY | Description            | Comment                                     | Link |
+|-----|------------------------|---------------------------------------------|------|
+| 1   | Control Board          | 5 driver min, Jackpot variant suggested     | [Shop](https://www.v1e.com/products/jackpot3-cnc-controller) – [Elecrow](https://www.elecrow.com/jackpot3-cnc-controller.html) |
+| 5   | Steppers, Nema17       | 20 mm+ shaft length                         | [Shop](https://www.v1e.com/collections/3dprinter-parts/products/nema-17-76oz-in-steppers) – [Amazon](https://amzn.to/3FcxGlE) |
+| 3   | Stepper wire extenders |                                             | [Shop](https://www.v1e.com/products/wiring-kit-1) – [Amazon](https://amzn.to/3BJMgov) |
+| 3   | Pulleys 16T 10 mm      | 10 mm GT2 16 tooth                          | [Shop](https://www.v1e.com/collections/3dprinter-parts/products/pulley-16-tooth-gt2-10mm) – [Amazon](https://amzn.to/3n9mUGM) |
+| 6   | Idlers Smooth 20T      | 20T smooth 5 mm bore                        | [Shop](https://www.v1e.com/collections/3dprinter-parts/products/20t-idler-gt2-10mm) – [Amazon](https://amzn.to/4dRxh9L) |
+| 8 m | Belt GT2 10 mm         | See [Calculator](./calculator), no steel belt | [Shop](https://www.v1e.com/collections/3dprinter-parts/products/gt2-10mm-belt) – [Amazon](https://amzn.to/48cO4mt) |
+| 5   | Endstops               |                                             | [Shop](https://www.v1e.com/collections/parts/products/limit-switch-endstop) – [Amazon](https://amzn.to/396oRzi) |
+| 14  | 608-2RS Bearings       |                                             | [Shop](https://www.v1e.com/collections/lowrider-parts/products/bearings-608-2rs) – [Amazon](https://amzn.to/3FDI8EI) |
+| 2   | T8 Leadscrew & nut     | 145 mm+, 4-start 2 mm pitch, 8 mm/rev      | [Shop](https://www.v1e.com/products/lowrider-v4-cnc-t8-leadscrews) – [Amazon](https://amzn.to/4eDgHLN) |
+| 2   | Coupler                | 8 mm to 5 mm                                | [Shop](https://www.v1e.com/collections/lowrider-parts/products/5mm-to-8mm-flex-coupler) – [Amazon](https://amzn.to/4etRhjC) |
+| 4   | Linear rails MGN       | MGN12H 150 mm                               | [Shop](https://www.v1e.com/products/150mm-mgn12h-linear-guides) – [Amazon](https://amzn.to/3PyAujr) |
+| 1   | Power Supply           | 9–24V, board dependent, 36W+               | [Shop](https://www.v1e.com/products/24v-power-supply) – [Amazon](https://amzn.to/3TXtjoM) |
+| *   | Thread locker          | Optional for grub screws                    | [Shop](https://www.v1e.com/collections/3dprinter-parts/products/0-5ml-threadlocker-242) – [Amazon](https://amzn.to/3GhaKmx) |
+| *   | Lube                   | Optional for idlers and linear rails        | [Shop](https://www.v1e.com/collections/3dprinter-parts/products/super-lube-silicone-lubricating-grease-with-syncolon-ptfe) – [Amazon](https://amzn.to/31H7yS6) |
+| *   | Vac Hose               | Optional 2.5" (70 mm) OD, steel rib        | [Amazon](https://amzn.to/47V20Ba) |
+
+_As an Amazon Associate, I earn from qualifying purchases._
+
+* Vac hoses need to be grounded at one end. A steel-ribbed hose makes this easy using the ground
+  port from your power source. If using a non-conductive hose, run a bare wire through the hose,
+  secure at one end and ground at the other. An ungrounded hose will build up static and can damage
+  your control board.
+
+---
+
+## Hardware
+
+This is what is needed for a 4' × 8' (1.2 m × 2.4 m) build. M8 or 5/16 should be hex head bolts.
+
+| QTY  | Description                            | US Equivalent |
+|------|----------------------------------------|---------------|
+| 14   | M8 × 40 mm Hex Head                   | 5/16" × 1.5" Hex Head |
+| 14   | M8 Nylock nuts                         | 5/16" Nylock |
+| 60   | M5 × 30 mm Button Head                | Must be metric |
+| 60   | M5 Nylock                              | Must be metric |
+| 83   | M3 × 10 mm Button Head                | Must be metric |
+| 10   | M2.5 × 12 mm Button Head              | Must be metric |
+| \*18 | M4 × 12 mm+ Wood/metal screws         | #8 × 1/2"+ to mount to your table |
+
+_\* Not included in the hardware kit. You may want different lengths for different material thickness._
+
+---
+
+## Conversion & Upgrade Kits
+
+<details>
+<summary>Required hardware for converting an older LowRider or MPCNC to an LR4</summary>
+
+**LR3 to LR4 hardware differences**
+
+[LR3→LR4 Upgrade kit](https://www.v1e.com/products/lowrider-v3-to-lowrider-v4-hardware-upgrade-kit) available in the shop.
+
+| QTY  | Description       | Notes |
+|------|-------------------|-------|
+| 39   | M3 × 10 mm        | |
+| 2    | 145 mm+ Leadscrews | |
+| set  | XZ Plates         | |
+| ~8 m | 10 mm belt        | Use the calc for accurate length |
+
+---
+
+**LR2 to LR4 hardware differences**
+
+| QTY | Description          | Notes |
+|-----|----------------------|-------|
+| 14  | 5/16×1.5" (8 mm bolts) | |
+| 14  | 5/16 (8 mm) nuts      | |
+| 54  | M5×30 mm screws       | |
+| 54  | M5 nut                | |
+| 10  | M2.5×12 mm            | |
+| 59  | M3 × 10 mm            | |
+| 5   | Endstops              | |
+| 4   | Linear rails          | |
+| set | XZ Plates             | |
+| ~8 m | 10 mm belt           | Use the calc for accurate length |
+
+* 5-driver control board recommended.
+* Updating to 24V power supply recommended if you only have 12V.
+
+---
+
+**MPCNC Primo to LR4 conversion hardware**
+
+| QTY | Description           | Notes |
+|-----|-----------------------|-------|
+| 61  | M3 × 10 mm            | |
+| 2   | M2.5 × 12 mm          | |
+| 1   | Endstop               | |
+| 1   | 145 mm+ Lead screw    | You can use the one you have and add one |
+| 1   | Coupler 8 mm to 5 mm  | |
+| 4   | Linear rails MGN12H 150 mm | |
+| set | XZ Plates             | |
+| ~8 m | 10 mm belt           | Use the calc for accurate length |
+
+* 5-driver control board recommended.
+* Updating to 24V power supply recommended if you only have 12V.
+
+</details>

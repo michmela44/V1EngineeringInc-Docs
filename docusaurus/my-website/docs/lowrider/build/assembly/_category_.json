@@ -1,0 +1,8 @@
+{
+  "label": "Assembly",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Step-by-step assembly guide for the LowRider v4 CNC. Relax, take your time, and use hand tools only — power tools cause more problems than they solve here. If you get stuck, ask on the forums."
+  }
+}

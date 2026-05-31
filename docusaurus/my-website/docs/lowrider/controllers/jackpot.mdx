@@ -1,0 +1,54 @@
+---
+title: Jackpot CNC Controller
+sidebar_position: 1
+---
+
+# Jackpot CNC Controller
+
+The Jackpot is V1 Engineering's purpose-built control board for the LowRider v4 and MPCNC. It is
+the recommended board for new builds.
+
+## Why Jackpot?
+
+* Runs [FluidNC](https://github.com/bdring/FluidNC) — a modern, actively maintained firmware.
+* Built-in WiFi: access the WebUI from any browser on your network, no USB required.
+* Designed specifically for V1 machines — pre-configured profiles available.
+* 6 drivers (5 needed for LR4), with simple config file setup.
+* [Shop](https://www.v1e.com/products/jackpot3-cnc-controller) · [Elecrow](https://www.elecrow.com/jackpot3-cnc-controller.html)
+
+## Full Documentation
+
+The complete Jackpot wiring and configuration guide lives in the V1 Electronics docs:
+
+* [Jackpot CNC Controller docs](https://docs.v1e.com/electronics/jackpot/)
+* [Wiring guide](https://docs.v1e.com/electronics/jackpot/#wiring)
+* [Onboard controls](https://docs.v1e.com/electronics/jackpot/#onboard-controls)
+* [FluidNC config for LowRider](https://docs.v1e.com/electronics/jackpot/)
+
+## Board Box
+
+A printed board box protects the Jackpot and mounts to your strut plate:
+
+* [Jackpot3 Box on Printables](https://www.printables.com/model/1434650-jackpot3-box)
+* [Original Jackpot Box](https://www.printables.com/model/1037842-jackpot-cnc-control-box-for-the-lowrider-4-cnc)
+
+## Squaring (Y Axis Offset)
+
+After assembly and initial calibration, if your machine isn't perfectly square you can adjust the
+Y pull-off distance in FluidNC's WebUI. In the WebUI, adjust the Y axis pull-off distance to
+correct skew. Use the **Save** macro to make changes persist after reboot.
+
+---
+
+## Other Supported Boards
+
+The LowRider v4 works with any 5-driver board running compatible firmware:
+
+| Board | Firmware | Notes |
+|-------|----------|-------|
+| Jackpot (recommended) | FluidNC | Purpose-built for V1 machines |
+| SKR Pro 1.2 | Marlin | Older but well-supported |
+| Any GRBL/GRBLHal board | GRBL / GRBLHal | Requires manual config |
+
+For SKR Pro / Marlin squaring: use the terminal to set `M666 Y0.5` (moves Y1 stepper 0.5 mm
+away from the stop after homing). Use `M500` to save to EEPROM.

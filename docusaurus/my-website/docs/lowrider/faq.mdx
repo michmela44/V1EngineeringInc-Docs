@@ -1,0 +1,113 @@
+---
+title: FAQ
+sidebar_position: 6
+---
+
+# Frequently Asked Questions
+
+## Getting Started
+
+**How much does a LowRider v4 cost?**  
+The average total build cost is about $650 if you buy the full kit from the shop. The only thing
+not included is a ~$120 router and a table. If you print your own parts you can lower that to just
+over $400. Most people get cutting for under $800 USD.
+
+**What can it cut?**  
+Foams, wood, and plastic are easy. Aluminum and other soft metals are no problem for an experienced
+user. A few users have even machined steel.
+
+**How big can I build it?**  
+Technically any size, but the most common builds are full sheet (4'×8'), half sheet (4'×4'), or
+quarter sheet (2'×4'). Larger builds cut more slowly. Use the
+[Size Calculator](/lowrider/build/calculator) for your exact dimensions.
+
+**What size should I build?**  
+Width (X axis, the Beam) should always be the shorter dimension. Beyond that, build what fits your
+space and your most common material size. Most people start with full sheet.
+
+---
+
+## Parts & Printing
+
+**What filament should I use?**  
+PLA is recommended for ultimate rigidity. PET-GF/CF and PC-GF/CF are good alternatives if you need
+heat resistance.
+
+**Do I need to print everything myself?**  
+No. V1 Engineering sells [printed part sets](https://www.v1e.com/products/lowrider-v4-printed-parts-with-aluminum-xz-plates)
+with the aluminum XZ plates included.
+
+**Where do I get rails?**  
+Self-source locally. In the US: 1" EMT conduit (29.5 mm OD) from any hardware store.
+Other countries typically use 30 mm or 32 mm OD tube. See [Planning](./build/planning) for full specs.
+
+**What control board should I use?**  
+The [Jackpot CNC Controller](/lowrider/controllers/jackpot) is purpose-built for V1 machines and
+is strongly recommended for new builds.
+
+---
+
+## Assembly
+
+**How long does the build take?**  
+See what [actual users report on the forum](https://forum.v1e.com/t/lr4-how-many-hours-to-build-lr4/45641/1).
+
+**Do I need power tools to assemble it?**  
+Hand tools only — power tools cause more problems than they solve. Snug is enough; nothing needs
+to be cranked down.
+
+**My Core tension bolts — how tight?**  
+Leave them loose initially. You want the Core seated without rattling. Loose is better than too
+tight; it is simple to add tension later but difficult to replace a broken core. If the core
+tightens and loosens as it crosses over braces, it is too tight.
+
+**Belt tension — how tight?**  
+Target about 7 lbs (3.2 kg) of tension. It will **not** pluck like a guitar string. Always start
+loose. The parts will break long before the belt does.
+
+---
+
+## Calibration
+
+**My machine isn't cutting square — what do I do?**  
+Mark four corner dots, measure both diagonals, and compare. If the difference is over 2 mm, adjust
+the Y pull-off in firmware. See [Calibration](./build/calibration) for step-by-step instructions.
+
+**My Z axis isn't level — one side cuts higher than the other.**  
+Use the Z leveling procedure to probe both sides and adjust the pull-off distance for the
+more-negative side. See [Calibration](./build/calibration).
+
+**My cuts are coming out several millimeters short — why?**  
+GT2 belts vary slightly in pitch. Run the belt calibration procedure to measure your actual belt
+pitch and adjust steps/mm. See [Calibration](./build/calibration).
+
+---
+
+## Troubleshooting
+
+**The machine hits a hard stop before the endstop triggers.**  
+The Y endstop screws are too far in. Adjust them outward so the endstop triggers just before the
+machine reaches the physical stop.
+
+**The endstop lever is getting popped or bent.**  
+The Y stop screw is too far out (or missing). Set it so the endstop triggers about 4 mm before
+the end of travel.
+
+**The beam sits crooked / heels and toes don't match.**  
+Check back wheel alignment on both YZ plates — outer faces should be flush with the wheel mounts.
+The lower strut plate screws at each end control the heel-toe distance.
+
+**The lower X rail is touching the metal XZ plate.**  
+This causes driving or lifting issues. The lower X rail should not contact the XZ plate. Check
+your rail lengths against the calculator values.
+
+**I can't get my Z stubs perpendicular to the leadscrew.**  
+Z stubs that tilt or twist cause Z binding. Make sure M5 nuts are fully seated and snug both
+screws evenly.
+
+---
+
+## Community & Support
+
+* [V1 Engineering Forum](https://forum.v1e.com) — the best place for build questions
+* [User map](https://www.v1e.com/blogs/news/user-map) — put a pin on the map once you're cutting!

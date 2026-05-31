@@ -1,0 +1,126 @@
+/* V1 Engineering theme
+   Light mode: black header, white body, red accents  (mkdocs: primary=black, accent=red)
+   Dark mode:  grey header,  slate body, red accents  (mkdocs: primary=grey,  accent=red, scheme=slate)
+*/
+
+/* ── Light-mode palette ─────────────────────────────────────────── */
+:root {
+  --ifm-color-primary: #c00000;
+  --ifm-color-primary-dark: #ab0000;
+  --ifm-color-primary-darker: #a10000;
+  --ifm-color-primary-darkest: #850000;
+  --ifm-color-primary-light: #d50000;
+  --ifm-color-primary-lighter: #da0000;
+  --ifm-color-primary-lightest: #e90000;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Match MkDocs font: false — use OS/browser default sans-serif */
+  --ifm-font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* ── Dark-mode palette ──────────────────────────────────────────── */
+/* scheme: slate ≈ near-black bg; Docusaurus default dark (#1b1b1d) is close */
+[data-theme='dark'] {
+  /* Brighter red for legibility on dark backgrounds */
+  --ifm-color-primary: #ff4444;
+  --ifm-color-primary-dark: #ff1f1f;
+  --ifm-color-primary-darker: #ff0a0a;
+  --ifm-color-primary-darkest: #e50000;
+  --ifm-color-primary-light: #ff6969;
+  --ifm-color-primary-lighter: #ff7e7e;
+  --ifm-color-primary-lightest: #ffa8a8;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* Slate background: close to MkDocs hsl(232,15%,12%) ≈ #191c29
+     Docusaurus default dark (#1b1b1d) is near-black — slightly warmer.
+     We keep our own values to stay close to the original slate scheme. */
+  --ifm-background-color: #181c2c;
+  --ifm-background-surface-color: #1f2336;
+
+  /* Ensure links use red, not the Docusaurus default teal */
+  --ifm-link-color: #ff6666;
+  --ifm-link-hover-color: #ff4444;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────────── */
+/* Light: black (mkdocs primary: black) */
+.navbar {
+  background-color: #000000;
+  --ifm-navbar-background-color: #000000;
+}
+
+/* Dark: mid-grey (mkdocs primary: grey → Material grey-700 ≈ #616161) */
+[data-theme='dark'] .navbar {
+  background-color: #616161;
+  --ifm-navbar-background-color: #616161;
+}
+
+/* Navbar text: white on both modes */
+.navbar .navbar__brand,
+.navbar .navbar__link,
+.navbar .navbar__item {
+  color: #ffffff;
+}
+
+[data-theme='dark'] .navbar .navbar__brand,
+[data-theme='dark'] .navbar .navbar__link,
+[data-theme='dark'] .navbar .navbar__item {
+  color: #ffffff;
+}
+
+/* Hover / active: red in both modes */
+.navbar .navbar__link:hover,
+.navbar .navbar__link--active {
+  color: #ff4444;
+}
+
+[data-theme='dark'] .navbar .navbar__link:hover,
+[data-theme='dark'] .navbar .navbar__link--active {
+  color: #ffaaaa;
+}
+
+/* Logo height — rectangular logo needs more room */
+.navbar__logo {
+  height: 36px;
+}
+
+/* ── Sidebar active item ─────────────────────────────────────────── */
+/* Make sure sidebar active links use red, not Docusaurus default teal/blue */
+.menu__link--active,
+.menu__link--active:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* ── Tables — ported from v1.css ─────────────────────────────────── */
+.markdown table {
+  font-size: 0.74rem;
+}
+
+.markdown table th,
+.markdown table td {
+  padding: 6px 9px;
+  border: 1px solid var(--ifm-table-border-color);
+  border-left: none;
+  border-top: none;
+}
+
+.markdown table th {
+  padding: 9px;
+}
+
+.markdown table tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+[data-theme='dark'] .markdown table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Max content width — matches MkDocs md-grid ─────────────────── */
+.container {
+  max-width: 1200px;
+}

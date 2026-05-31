@@ -1,0 +1,25 @@
+---
+title: Size Calculator
+sidebar_position: 3
+---
+
+import MPCNCCalculator from '@site/src/components/MPCNCCalculator';
+
+# MPCNC Size Calculator
+
+## Sizing
+
+When choosing what size to make your machine, start with the _build area_. This is the area your
+tool can reach. Smaller machines are more rigid. The more rigid a machine is, the easier and more
+forgiving it is to use. This gives you a larger acceptable feeds and speeds window. More rigid
+also means it will be faster and more accurate with the right settings. Every millimeter counts but
+**the Z axis has the largest effect on rigidity**. For a Primo MPCNC, 81mm is the shortest and **I
+highly** recommend that. More sizing details on the [intro page](intro#size).
+
+![MPCNC ISO Diagram](/img/old/2020/06/ISO-Diagram2.jpg)
+
+![MPCNC Side Diagram](/img/old/2020/06/Primo-Calc-diagram-1.jpg)
+
+## Calculator
+
+<MPCNCCalculator />

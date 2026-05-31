@@ -1,0 +1,90 @@
+---
+title: Printed Parts
+sidebar_position: 4
+---
+
+# Printed Parts
+
+A lot of the LowRider v4 is 3D printed. To save shipping large parts, the machine can even be
+partially assembled first to cut its own permanent strut plates.
+
+## Buy or Print?
+
+**Buy** — Rather not spend time printing? Buy a set from the
+[V1 Shop](https://www.v1e.com/products/lowrider-v4-printed-parts-with-aluminum-xz-plates).
+In Germany/EU: [HaWiWe](https://hawiwe.de/produkt/lowrider-4-druckteile).
+
+**Print your own** — Files available at:
+
+* [Printables.com](https://www.printables.com/model/1034840-lowrider-4-cnc)
+* [Thingiverse](https://www.thingiverse.com/thing:6907717)
+* [Maker World](https://makerworld.com/en/models/976448-lowrider-4-cnc?from=search#profileId-1438932)
+
+## Print Settings
+
+* No supports; keep the default orientation.
+* About 2.7 kg of filament for a full set with tool mount and board box.
+* PLA is recommended for ultimate rigidity. PET-GF/CF and PC-GF/CF are good alternatives with heat
+  resistance.
+* 3 walls, rectilinear or cubic infill. Thicker layers are fine — no more than 80% nozzle-to-layer
+  ratio to keep steep walls working.
+* 200 mm × 200 mm × 190 mm available build volume needed.
+
+:::info
+Printer skew calibration is suggested to ensure parts are true vertical. A carpenter's square and a
+tall printed part work well, or use a [Vector3D CaliLantern](https://vector3d.shop/products/calilantern-calibration).
+Skew calibration is sufficient; size calibration should not be needed.
+
+You can also print the two small parts, Z\_Stub and Z\_Nut, first to verify fit and practice M5
+nut insertion before printing the larger parts.
+:::
+
+## Parts List
+
+| QTY  | File Name             | Infill | Comment                              | Link |
+|------|-----------------------|--------|--------------------------------------|------|
+| 1    | Core                  | 30%    |                                      | |
+| 1    | YZ\_Plate\_Min        | 25%    |                                      | |
+| 1    | YZ\_Plate\_Max        | 25%    |                                      | |
+| 1    | FrontWheel\_Min       | 20%    |                                      | |
+| 1    | FrontWheel\_Max       | 20%    |                                      | |
+| 1    | BackWheel\_Min        | 20%    |                                      | |
+| 1    | BackWheel\_Max        | 20%    |                                      | |
+| 1    | Y\_Belt\_MinF         | 30%    |                                      | |
+| 1    | Y\_Belt\_MinB         | 30%    |                                      | |
+| 1    | Y\_Belt\_MaxF         | 30%    |                                      | |
+| 1    | Y\_Belt\_MaxB         | 30%    |                                      | |
+| 1    | Y\_Belt\_Max\_Lock    | 30%    |                                      | |
+| 1    | Y\_Belt\_Min\_Tension | 30%    |                                      | |
+| 1    | Y\_Belt\_Min\_Lock    | 30%    |                                      | |
+| 1    | Y\_Belt\_Max\_Tension | 30%    |                                      | |
+| 1    | ZStop\_Min            | 30%    |                                      | |
+| 1    | ZStop\_Max            | 30%    |                                      | |
+| 2    | Z\_Nut                | 30%    |                                      | |
+| 1    | Z\_Stub\_Min          | 30%    |                                      | |
+| 1    | Z\_Stub\_Max          | 30%    |                                      | |
+| 1    | X\_Belt               | 30%    |                                      | |
+| 4–6  | Brace\_###            | 30%    | *See Brace note below                | |
+| 1    | Brace\_Max\_###       | 60%    | *See Brace note below                | |
+| 1–2  | Hose\_Hook\_##        | 30%    | 1 or 2 depending on build            | |
+| 1–2  | Hose\_Holder\_Hook    | 30%    | 1 or 2 depending on build            | |
+| 2    | Hose\_Holder\_Shorty  | 30%    |                                      | |
+| 7–10 | Y\_Clip\_###          | 30%    | No more than 300 mm center to center | |
+| 4    | Temp Strut            | 15%    |                                      | |
+| 1    | Makita / DeWalt / Kobalt | 30% | Print info in the part description | [Makita](https://www.printables.com/model/1033926-makita-701-tool-mount-and-dust-shoe-for-the-lowrid) · [DeWalt](https://www.printables.com/model/1034374-dewalt-611-tool-mount-and-dust-shoe-for-the-lowrid) · [Kobalt](https://www.printables.com/model/1034828-kobalt-tool-mount-and-dust-shoe-for-the-lowrider-c) |
+| 1    | Board Box             | 20%    |                                      | [Jackpot](https://www.printables.com/model/1037842-jackpot-cnc-control-box-for-the-lowrider-4-cnc) · [Jackpot3](https://www.printables.com/model/1434650-jackpot3-box) · [SKR Pro](https://www.printables.com/model/1051517-skr-pro-box-for-the-lowrider-4-cnc) |
+
+* Wire sleeve is nice but not needed: [Shop](https://www.v1e.com/products/wire-sleeve), [Amazon](https://amzn.to/3EDzb1H).
+* "###" = various sizes.
+* **Brace note** — Print Brace\_Max\_### and one Brace\_### at 60% infill. These are the end braces and benefit from added rigidity.
+* If a part name is followed by a version number, use the highest one. V1, V2, V3… means there was a fix or edit; a bigger number is the newer part.
+
+:::warning
+Repetier, Slic3r, Prusa Slicer, Orca, and Bambu all seem to slice normally. Cura-based slicers can
+behave differently. Make sure the parts are aligned on your bed as shown in the Printables thumbnails.
+Bridging can also be an issue for some internal overhangs — check the "Dust Skirt" and "YZ\_Plate"
+internal features after slicing to verify the bridges span the short way. Repetier/PrusaSlicer-based
+slicers have been tested to work as expected.
+:::
+
+![LowRider v4 Community Build](/img/lowrider/v4/JJs.jpeg)

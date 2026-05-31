@@ -1,0 +1,85 @@
+---
+title: Troubleshooting
+sidebar_position: 8
+---
+
+# Troubleshooting
+
+Having trouble? Check here first, then ask on the [V1 Engineering Forum](https://forum.v1e.com).
+
+## Motion & Mechanics
+
+**The machine hits a hard stop before the endstop triggers.**  
+The Y endstop screws are too far in. Adjust them outward so the endstop triggers just before the
+machine reaches the physical stop. Target: trigger with about 4 mm of travel remaining.
+
+**The endstop lever is getting popped or bent.**  
+The Y stop screw is set too far out (or missing). The endstop should trigger before the machine
+reaches its travel limit, not after.
+
+**The lower X rail is touching the metal XZ plate.**  
+This causes driving or lifting issues and can prevent the Z axis from moving freely. The lower X
+rail must not contact the XZ plate. Verify your rail lengths against the [calculator](./calculator)
+values.
+
+**The beam sits crooked / heels and toes don't match.**  
+Check back wheel alignment on both YZ plates — outer faces of the plate and wheel mount should be
+flush. The lower strut plate screws at each end control the heel-toe distance.
+
+**The Core tightens and loosens as it crosses over braces.**  
+The top two Core tension bolts are too tight. Back them off. Loose is always better than too tight
+here — it is simple to add tension later.
+
+**Z binding — the leadscrew feels stiff or the Z motor skips.**  
+Check your Z stubs: they must be perpendicular to the leadscrew. Any tilt or twist binds the nut.
+Also check that the brass nut is properly seated in the Z\_Nut part.
+
+---
+
+## Belts
+
+**Belt tension — how tight should it be?**  
+Target about 7 lbs (3.2 kg) of tension. It will **not** pluck like a guitar string. When in doubt,
+go looser. The parts will break long before the belt does.
+
+**Cuts are consistently several millimeters short or long.**  
+The belt pitch is slightly off from nominal. Run the [belt calibration](./calibration) procedure to
+measure your actual pitch and adjust steps/mm.
+
+**The endstop lever keeps getting hit during homing.**  
+The Y stop screw needs adjustment — set it so the endstop triggers about 4 mm before the end of
+physical travel.
+
+---
+
+## Squaring & Leveling
+
+**My cuts aren't square — diagonals don't match.**  
+Follow the [squaring procedure](./calibration). If the difference is over 2 mm, adjust the Y
+pull-off in firmware. Under 1 mm is very good; under 2 mm is acceptable for most work.
+
+**One side of a surfacing pass is higher than the other.**  
+Run [Z leveling](./calibration) to equalize both Z endstop positions. Getting under 0.1 mm
+difference between sides is achievable.
+
+---
+
+## Printing & Parts
+
+**My printed parts have bad bridges or internal features look wrong.**  
+Cura-based slicers can behave differently from Repetier/PrusaSlicer. Check the Printables
+thumbnails for expected orientation. Verify the "Dust Skirt" and "YZ\_Plate" bridges span the
+short way.
+
+**Nuts won't press into Z stubs or Core.**  
+Try threading an M5 bolt through the XZ plate and using it to pull the nut into place (for tight
+prints). For loose prints, a flat head screwdriver can press them in directly.
+
+---
+
+## Getting More Help
+
+* [V1 Engineering Forum](https://forum.v1e.com) — the best place for build-specific questions
+* [LR4 build time thread](https://forum.v1e.com/t/lr4-how-many-hours-to-build-lr4/45641/1) — see
+  how others' builds went
+* [FAQ](/lowrider/faq) — common questions answered

@@ -1,0 +1,187 @@
+---
+title: Strut Plates
+sidebar_position: 7
+---
+
+# Strut Plates
+
+The strut plates are the first real cuts your LowRider v4 makes — they replace the temporary
+printed struts you have been using and give the beam its final rigidity.
+
+## Making the Strut Plates
+
+At this point you should be ready to make some cuts. Refer to
+[Basic software setup](https://docs.v1e.com/software/estlcam-basics/) and
+[Basic CAM settings](https://docs.v1e.com/tools/milling-basics/) if needed.
+
+The two strut plates should be 6.35 mm (1/4") or thinner MDF or similarly rigid material. No 1/4"
+ply — that is too soft. Plastic or metal are fine but harder for a new CNC user to cut.
+
+---
+
+![Strut plates material loaded](/img/lowrider/v4/splates1.jpg)
+
+* Check that your material is relatively square on the machine.
+* Secure the material and make sure your endmill will not hit it while passing nearby.
+
+---
+
+![Strut plate file](/img/lowrider/v4/strut.png)
+
+* Use the [calculator](./calculator) and [Vector76 Strut Generator](https://vector76.github.io/Web_OpenSCAD_Customizer/strut_plate.html)
+  to make your custom file.
+* `strut_length` = value from the [calculator](./calculator)
+* `num_braces` = leave at default
+* `size of dogbone...` = 3.5 for a 1/8" (3 mm) endmill
+* Check both `front_plate` and `bottom_plate`
+* `front_wing_size` = 11.5 for 29.5 mm (1" EMT), or your conduit size
+* Click `Render (Ctrl+Enter)` → download `strut_plate.svg`
+
+---
+
+![Strut plates in EstlCAM](/img/lowrider/v4/splates2.jpg)
+
+* Open the SVG in EstlCAM using millimeters.
+* Rotate the drawing layer 90 degrees.
+* Move your zero near the lower left corner — this is where you will position the machine after homing.
+
+---
+
+![Strut plates drill](/img/lowrider/v4/splates3.jpg)
+
+* Beginners should cut one plate at a time.
+* Drill all holes first.
+* Helical drill gets perfect larger-diameter holes with a smaller endmill.
+
+---
+
+![Strut plates part cut](/img/lowrider/v4/splates4.jpg)
+
+* Use "Part" to cut outside the line.
+* Use several "tabs" to keep your part in the material after cutting out.
+
+---
+
+![Strut plates select all](/img/lowrider/v4/splates5.jpg)
+
+* Use the "Select" tool to drag a rectangle around the entire project to select all paths.
+* Adjust all settings to match: depth of cut (at least 0.2 mm further than your material),
+  finishing path size and tool, tab width and thickness.
+* Export your program and cut those parts!
+
+---
+
+## Swapping to Custom Strut Plates
+
+Now to put the new strut plates on your CNC — a second chance to clean up any sloppy wiring.
+
+![Strut plates swap start](/img/lowrider/v4/sr1.jpg)
+
+* Start by removing the X belt and both Y belts.
+* Bundle and rubber band them to prevent snagging.
+
+---
+
+![Strut plates remove old](/img/lowrider/v4/sr2.jpg)
+
+* Loosen and remove all front plate X rail screws.
+* Remove all four temp strut plates.
+
+---
+
+![Strut plates remove core](/img/lowrider/v4/sr3.jpg)
+
+* To remove the Core, remove the whole side or slide out the top rail enough to slip off the Core.
+* You can also slide the Core to the far end and shimmy the strut plates under it.
+
+---
+
+![Strut plates front plate](/img/lowrider/v4/sr4.jpg)
+
+* Add the front strut plate — line up the braces.
+* Put the plate straight in; do not wedge it top-to-bottom as that's harder.
+* Do not push too hard or you can crack the plate.
+* If having issues, pop the two rails out to give more room.
+* Add screws loosely; you may need to shimmy things around. Snug later.
+
+---
+
+![Strut plates core back on](/img/lowrider/v4/sr5.jpg)
+
+* Put the core back on.
+* Add the last two screws.
+
+---
+
+![Strut plates bottom plate](/img/lowrider/v4/sr6.jpg)
+
+* Add the bottom plate, same as the front.
+* Tip: tip in the X min side first to get the edge under the M3 bearing block screws.
+* Once all bottom screws and nuts are loosely in, go back and snug them up.
+
+---
+
+![Strut plates board box mount](/img/lowrider/v4/sr7.jpg)
+
+* Use the V1 board box to mark and drill holes in your strut plate.
+* M3×10 to secure.
+
+---
+
+![Strut plates heel toe check](/img/lowrider/v4/ht1.jpg)
+
+* Double-check your heel-toe measurements are equal.
+* The last two screws on either side of the lower strut plate control your heel-toe distance.
+* Measure the YZ Plate, not the front or back wheel mounts.
+* Measure across the back of the YZ Plates.
+
+---
+
+![Strut plates heel toe front](/img/lowrider/v4/ht2.jpg)
+
+* Now measure across the front of the YZ Plate.
+* The two numbers should be as close as you can measure.
+* Adjustment: loosen the 2 or 4 screws on the lower strut plate and shift the plate, then re-snug.
+* **Pro-Tip** — if you cannot get these right, the lower X rail is likely too long. The lower X
+  rail should not touch the metal XZ plate.
+
+---
+
+![Strut plates snug front](/img/lowrider/v4/sr8.jpg)
+
+* Snug all front plate screws. There should be a visible gap in the brace clamp even when snug.
+  These screws just keep the plate snug to the braces.
+* Put your X belt back on.
+
+---
+
+![Strut plates Z width check](/img/lowrider/v4/sr9.jpg)
+
+* Check the Z axis: the width across the top and bottom should be the same.
+* Adjustment: the front plate 2 screws on each end.
+
+---
+
+## Final Checklist
+
+Now that assembly and adjustments are done:
+
+* Check your Y belt endstop position — sometimes the width changes slightly. If you need to move
+  the Min Y belt holder, drill out the screw holes to give yourself more wiggle room.
+* Recheck the machine square.
+* Recheck the machine Z level.
+
+At this point you are done — you have a fully functional machine! Before you go off into the wild
+world of CNC: make test cuts. All included settings and instructions are extremely conservative —
+there is no such thing as perfect settings. Have fun and go get that thing dirty.
+
+---
+
+## Build Experience
+
+[How did it go for you?](https://forum.v1e.com/t/lr4-how-many-hours-to-build-lr4/45641/1)
+
+Now that you have a V1 Engineering CNC Machine, how about putting a
+[little pin on our map](https://www.v1e.com/blogs/news/user-map)?!
+
+### Go get it dirty, be safe, have fun!

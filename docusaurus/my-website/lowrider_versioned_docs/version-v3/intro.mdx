@@ -1,0 +1,758 @@
+---
+title: LowRider CNC V3
+sidebar_position: 1
+---
+
+# Low Rider CNC 3
+
+The LowRider3 is the V1 Engineering version of a CNC router that can handle up to full sheet material! If the MPCNC is not big enough for you this picks up where that left off.
+
+![LR3 Fancy Picture](/img/lr3/LR3_Fancy%20(6).jpg)
+
+### Key Points
+
+* Most parts can be 3D printed. To save from shipping or printing large parts the machine can be partially assembled to cut them itself.
+
+* Easily Removable from the table for storage or portability.
+
+* Inexpensive hardware store conduit is the recommended X rail. Rails ranging from 23.4mm to 25.4mm will work. This saves considerable cost over the LR2.
+
+* Many tool options, in terms of functionality and brands. Blank DIY mount files are available.
+
+* Full Y and Z axis squaring, leveling, and Z probing are available for excellent precision and accuracy.
+
+* Works with any 5 driver board. 4 driver boards can be used but some automation, one axis dual endstops, will be lost.
+
+* Can be used with Marlin, RepRap firmware, GRBL, FluidNC, or others.
+
+![LR3 Fancy Picture](/img/lr3/LR3_Fancy%20(2).jpg)
+
+### Geometry
+
+* This CNC router can handle any length (within reason), the Y direction is only bound by your table length.
+
+* The single Y rail keeps the machine properly constrained while maintaining ease of use. Two rails are extremely difficult to align, and fully constrained rails do not allow for easy removal of the machine.
+
+* Width (X axis or "Beam") should always be the shorter axis.
+
+* The Z direction (height) is best kept to 80mm. This allows for 1.5" of cutting depth, that is a lot. If you need to cut more than 1.5" deep this is not the CNC for you. Now if you need to cut a few millimeters off really thick material (facing a slab), this can be a great machine for that. You want to keep the machine as low as possible and make the table surface adjustable by using something like a drop table. This keeps the Material Removal Rate very high. The answer is not making a taller machine.
+
+* This router is most rigid when working near the table surface, opposite of most conventional gantry CNC machines. So the lower the axis the more rigid the machine.
+
+![LR3 Fancy Picture](/img/lr3/LR3_Fancy%20(3).jpg)
+
+### License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+More details to my loosened restrictions can be found here on [the home page](https://www.v1e.com/pages/trademark-and-file-licenses).
+
+![LR3 Fancy Picture](/img/lr3/LR3_Fancy%20(4).jpg)
+
+### Files
+
+Printed parts files can be found at the links below:
+
+- [Printables.com Link](https://www.printables.com/model/204709-lowrider-3-cnc)
+- [Thingiverse.com Link](https://www.thingiverse.com/thing:5436094)
+
+![LR3 Fancy Picture](/img/lr3/LR3_Fancy%20(7).jpg)
+
+## Parts Needed
+
+### Printed Parts
+
+Buy a set here, [V1 Shop](https://www.v1e.com/collections/lowrider-parts/products/lowrider-v3-printed-parts).
+
+Or print your own. No supports needed, keep the default orientation. PLA is recommended for ultimate rigidity, other filaments should be evaluated for rigidity. 2-3 walls rectilinear infill. Thicker layers since these are large parts, no more than 80% nozzle diameter to keep overhangs working.
+
+|QTY |File Name                   |Infill |Comment                              |
+|----|----------------------------|-------|-------------------------------------|
+|1   |LR Core                     |35%    |                                     |
+|1   |X Drive Mount               |30%    |                                     |
+|2   |Y Drive                     |30%    |                                     |
+|2   |Z Drive                     |30%    |                                     |
+|4   |Temporary Strut             |30%    |                                     |
+|1   |Front Rail Roller           |30%    |                                     |
+|1   |Rear Rail Roller            |30%    |                                     |
+|1   |Bearing Wheel Bracket Front |30%    |Optional Version                     |
+|1   |Bearing Wheel Bracket Rear  |30%    |Optional Version                     |
+|1   |Z Stop                      |30%    |                                     |
+|1   |Z Stop M                    |30%    |                                     |
+|6-8 |Brace -Choose one size-     |30-50% |See Brace Note below                 |
+|6-8 |Hose Hanger                 |30%    |Same number as braces, Optional part |
+|1   |X Tensioner                 |30%    |                                     |
+|1   |XZ Plate Left               |70%    |Can be milled                        |
+|1   |XZ Plate Right              |70%    |Can be milled                        |
+|1   |Front Y Belt Holder         |30%    |                                     |
+|1   |Front Y Belt Base           |30%    |                                     |
+|1   |Front Y Belt Holder Right   |30%    |                                     |
+|1   |Front Y Belt Base Right     |30%    |                                     |
+|1   |Y Tension Block Rear        |30%    |                                     |
+|1   |Y Tension Base Rear         |30%    |                                     |
+|1   |Y Tension Block Rear Right  |30%    |                                     |
+|1   |Y Tension Base Rear Right   |30%    |                                     |
+|8-14|Rail Block -Choose one size-|30%    |See Rail block note below            |
+|    |Optionally Printed          |       |                                     |
+|2   |YZ Plate                    |50%    |Best as a milled part                |
+
+### Tool Mounts
+
+Recommended [Makita 700 series router](https://amzn.to/3PnQKUf) (available in many countries with slightly different model numbers), [tool mount and dust shoe](https://www.printables.com/model/167678-makita-700-series-mount-and-removable-dust-shoe-fo).
+
+[DeWalt 611](https://amzn.to/3leu6zL), [Tool mount and dust shoe](https://www.printables.com/model/166254-dewalt-611-mount-and-removable-dust-shoe-for-the-l).
+
+Build your own, [CAD](https://a360.co/3vbUQFX) and [step files](https://www.printables.com/model/167687-lowrider-3-cnc-blank-tool-mount).
+
+### Board Boxes
+
+- [SKR Pro](https://www.printables.com/model/209348-skr-pro-lr3-specific-case)
+- [Rambo](https://www.printables.com/model/209411-rambo-or-mini-rambo-lr3-specific-case)
+- [Mini Rambo](https://www.printables.com/model/209411-rambo-or-mini-rambo-lr3-specific-case)
+
+Blank Box, DIY your own case, [Fusion 360 CAD link](https://www.printables.com/model/215441-blank-cad-for-lr3-control-box-case).
+
+## Flat Parts
+
+### Strut Plates
+
+The Three Strut plates were designed to be up to 6.35mm (1/4") thick. Hardboard or any similarly rigid materials work best here.
+
+For Strut Plate sizes, use the [Calculator](calculator). Enter your build dimensions, then click on *Download Strut.SVG* link.
+
+If you're custom designing a Strut Plate for some reason, ensure no more than 200mm (8") between the braces.
+
+![Strut Edit Picture](/img/lr3/strut%20edit.jpg)
+
+### YZ Plates
+
+The YZ Plates can be nearly any thickness. Again here, rigidity is key. 1/2" (12mm) MDF is a great choice. Much thicker than that and you will need to clearance some for the coupler. At 16.5mm and thicker you will need to counter bore for the M5 nuts or get longer screws.
+
+### XZ Plates
+
+The printed XZ plates (when printed in PLA) prove to be more rigid than 1/2" MDF. The only way to get any more rigidity is going to metal. If you choose to make your own, here are the guidelines.
+
+![XZ plate thickness](/img/lr3/nomorethan9p5.jpg)
+
+The M5 screws provided with the kit can handle up to 9.5mm thick plates and anything less than that. Anything above and you will need to counter bore the heads.
+
+![XZ plate M3](/img/lr3/nomorethan7.jpg)
+
+The M3 screws provided with the kit need 6.35mm to 7mm plate thickness.
+
+:::note
+If you go thinner you will needs washers, to go thicker you will need to counter bore the heads. The DXF contains the counter bore locations, only cut the smaller holes through all.
+:::
+
+### Specialty Parts
+
+You can buy most of the Specialty Parts and hardware here, [V1 Shop](https://www.v1e.com/collections/lowrider-parts/products/lowrider-v3-hardware-kit)
+
+|QTY  |Description             |Comment                                        |Link                        |
+|-----|------------------------|-----------------------------------------------|----------------------------|
+|1    |Control Board           |5 driver minimum                               |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/skr-pro1-2-6x-2209-drivers-tft35-e3-v3) – [Amazon](https://amzn.to/3mp6nOk)|
+|5    |Steppers, Nema17        |20mm+ shaft length                             |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/nema-17-76oz-in-steppers) – [Amazon](https://amzn.to/3FcxGlE)|
+|3    |stepper wire extenders  |                                               |[Shop](https://www.v1e.com/products/wiring-kit-1) – [Amazon](https://amzn.to/39DSW9I)|
+|3    |Pulleys 16T 10mm        |10mm GT2 16 Tooth                              |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/pulley-16-tooth-gt2-10mm) – [Amazon](https://amzn.to/3n9mUGM)|
+|6    |Idlers Smooth 20T       |20T Smooth 5mm Bore                            |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/20t-idler-gt2-10mm) – [Amazon](https://amzn.to/3JXAXJi)|
+|8M   |Belt GT2 10mm           |See [Calculator](calculator), no steel belt    |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/gt2-10mm-belt) – [Amazon](https://amzn.to/3u5imW6)|
+|5    |Endstops                |                                               |[Shop](https://www.v1e.com/collections/parts/products/limit-switch-endstop) – [Amazon](https://amzn.to/396oRzi)|
+|14   |608-2RS Bearings        |                                               |[Shop](https://www.v1e.com/collections/lowrider-parts/products/bearings-608-2rs) – [Amazon](https://amzn.to/3FDI8EI)|
+|2    |T8 Leadscrew & nut      |110mm or larger                                |[Shop](https://www.v1e.com/collections/lowrider-parts/products/110mm-t8-leadscrew-and-nut) – [Amazon](https://amzn.to/3wnjvrI)|
+|2    |Coupler                 |8mm to 5mm                                     |[Shop](https://www.v1e.com/collections/lowrider-parts/products/5mm-to-8mm-flex-coupler) – [Amazon](https://amzn.to/3yoet0D)|
+|4    |Linear rails MGN        |MGN12H 150mm                                   |[Shop](https://www.v1e.com/products/150mm-mgn12h-linear-guides) – [Amazon](https://amzn.to/3PyAujr)|
+|1    |Power Supply            |12-36V Board dependant 36W+                    |[Shop](https://www.v1e.com/products/24v-power-supply) – [Amazon](https://amzn.to/3Pe0P6m)|
+|*    |Thread locker           |Optional for grubs screws                      |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/0-5ml-threadlocker-242) – [Amazon](https://amzn.to/3GhaKmx)|
+|*    |Lube                    |Optional for idlers and linear rails           |[Shop](https://www.v1e.com/collections/3dprinter-parts/products/super-lube-silicone-lubricating-grease-with-syncolon-ptfe) – [Amazon](https://amzn.to/31H7yS6)|
+|*    |Vac Hose                |Optional any 1.5" OD Vacuum hose should work   | – [Amazon](https://amzn.to/38iqA4v)|
+
+### Hardware
+
+This is what is needed for a 4' x 8' (1.2m x 2.4m) build. You will need more or less depending on what size you build.
+
+|QTY  |Description             |US Equivalent                                  |
+|-----|------------------------|-----------------------------------------------|
+|14   |M8 x 40mm               |5/16" x 1.5"                                   |
+|14   |M8 Nylock nuts          |5/16" Nylock                                   |
+|100  |M5 x 30mm               |Machine Screws                                 |
+|100  |M5 Nylock               |None                                           |
+|44   |M3 x 10mm               |Machine Screws                                 |
+|10   |M2.5 x 12mm             |Machine Screws                                 |
+|24   |3mm x 12mm Wood/metal   |#4 x 1/2" Wood or Sheet metal screws           |
+|*22  |M4 x 12mm+ Wood/metal   |#8 x 1/2"+ Screws to mount things to your table|
+
+\* Not included in the hardware kit.
+
+### Table
+
+Your table needs only be as fancy as a sheet of wood on a relatively flat, smooth surface. A CNC can self correct many of its own imperfections if needed. Typically, our tables only support the CNC and some material, so nothing heavy duty is typically required.
+
+Any existing table that is large enough is fine. You can use its surface directly, or a more popular option is to add a waste board of some sort that is replaceable as it gets used.
+
+Next would be to build a basic table with any material that is easy to source for you. Accuracy is not super important, but the more square and flat you make it, the better.
+
+If you have a table saw, circular saw with a guide, or a CNC machine, a Torsion Box table is pretty easy to make and can lead to a very stable surface that will last a long time. Here is a basic parametric set of plans that are easily configurable [V1 LR Table](https://forum.v1e.com/t/parametric-table/37698).
+
+![LR3 Dimensions](/img/lr3/LR3%20Dims.jpg)
+
+[Calculator for table, rail, and belt lengths.](calculator)
+
+## Assembly
+
+Here is a wonderful video showing what you are getting into. Lots of time stamps if you want to skip around.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FJ7nYio8oOE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+### Core Assembly
+
+[Quick Animation](https://youtu.be/WCgN_NUhKv4)
+
+![LR3 Core 1](/img/lr3/LR3%20(1).jpg)
+
+* LR Core, and six M5 nuts.
+
+![LR3 Core 2](/img/lr3/LR3%20(2).jpg)
+
+* Press these 6 nuts in place.
+* If they are not snug, use some loctite or glue to keep them in place, or mount your tool mount now loosely.
+* The 7th hole is a spare for future expansion packs.
+
+![LR3 Core 3](/img/lr3/LR3%20(3).jpg)
+
+* Bolts, 608-2RS bearings and nuts for the next step.
+
+![LR3 Core 4](/img/lr3/LR3%20(4).jpg)
+
+* Snug up these 6 bolts and make sure everything still moves freely.
+* These last two bolts control how much tension the core has on the Beam.
+* Lightly seat these nuts and wait to set the tension until you have the beam ready.
+
+![LR3 Core 5](/img/lr3/LR3%20(5).jpg)
+
+* Get your Micro switch ready along with some M2.5 screws.
+
+![LR3 Core 6](/img/lr3/LR3%20(6).jpg)
+
+* Notice the lever orientation.
+* Lightly set the M2.5 screws. If they strip out, add a drop of glue or thread locker to the threads and they should stay seated when it dries.
+
+#### X Drive
+
+![LR3 X Drive 1](/img/lr3/LR3%20(7).jpg)
+
+* This section uses the X Stepper Mount, two M5 x 30 screws, two M5 locknuts, and two Idlers.
+
+![LR3 X Drive 2](/img/lr3/LR3%20(8).jpg)
+
+* Assemble as shown with the nuts down, very lightly seating the nuts.
+* The inside nut fits in a small groove in the printed part.
+* Make sure the Idlers spin freely.
+
+![LR3 X Drive 3](/img/lr3/LR3%20(9).jpg)
+
+* Add the pulley to the stepper 1-2mm up from the base.
+* Tighten the flat grub screw first and then the next.
+* Threadlocker or LocTite is recommended.
+
+![LR3 X Drive 4](/img/lr3/LR3%20(10).jpg)
+
+* Assure the pulley is centered with the idlers when assembled.
+
+![LR3 X Drive 5](/img/lr3/LR3%20(11).jpg)
+
+* Make sure to orient the wire out, as shown.
+* Snug the stepper in place with M3's
+
+![LR3 X Drive 6](/img/lr3/LR3%20(12).jpg)
+
+* Add the stepper assembly to the Core.
+* Make sure the M5's engage the nuts properly, If there is any sign of binding, back out and try again.
+* If for some reason the nuts spin, use a small flat head screw driver to pin it in place as you tighten.
+
+![LR3 X Drive 7](/img/lr3/LR3%20(13).jpg)
+
+* Snugged in place.
+
+![LR3 X Drive 8](/img/lr3/LR3%20(14).jpg)
+
+* Tuck the wires into the groove and you can secure them at the top with a wire or cable tie.
+* Now is a good time to add your touch plate wires if you are using one.
+* Soon this part is going to be buried behind a router and a hose, so admire it now. Looks good, right?!
+
+---
+
+### Side Plate Assemblies
+
+![LR3 Side 1](/img/lr3/LR3%20(15).jpg)
+
+* Z drives, steppers, M3 screws.
+
+![LR3 Side 2](/img/lr3/LR3%20(16).jpg)
+
+* Pay attention to wire routing here.
+* Snug up the M3 Screws
+
+![LR3 Side 3](/img/lr3/LR3%20(17).jpg)
+
+* Y drives, Idlers, M5's
+
+![LR3 Side 4](/img/lr3/LR3%20(18).jpg)
+
+* Seated, not snug. Screws are axles here.
+* Nuts facing down.
+* Make sure idlers are very free to spin.
+
+![LR3 Side 5](/img/lr3/LR3%20(19).jpg)
+
+* Add the pulley to the stepper. 1-2mm gap next picture has a visual check.
+* Tighten the grub screw on the flat shaft surface first then the other screw.
+* LocTite is recommend on all grub screws.
+
+![LR3 Side 6](/img/lr3/LR3%20(20).jpg)
+
+* Make sure the pulley teeth are centered with the idlers.
+* Snug the stepper in place with the M3 Screws.
+* Wires should face one in each direction (mirrored), just like the Y drives.
+
+![LR3 Side 7](/img/lr3/LR3%20(21).jpg)
+
+* Microswitches, M2.5 screws.
+
+![LR3 Side 8](/img/lr3/LR3%20(22).jpg)
+
+* Make sure the lever faces out (up in this picture).
+* Switch away from the stepper wires, route wires together (for now).
+* Gentle with the tiny screws threading into the printed part. Seated, no more.
+
+![LR3 Side 9](/img/lr3/LR3%20(23).jpg)
+
+* Orientation, mirrored sets.
+
+![LR3 Side 10](/img/lr3/LR3%20(24).jpg)
+
+* Z Stop & Z Stop M, wired endstops, M2.5mm screws.
+
+![LR3 Side 11](/img/lr3/LR3%20(25).jpg)
+
+* Notice the direction of the switch levers
+* Tuck the wires nicely into the groove and make sure not to pinch them when installing them later.
+* Gentle with the small M2.5 screws.
+
+![LR3 Side 12](/img/lr3/LR3%20(26).jpg)
+
+* T8 nut, and 1-2 M3 screws.
+
+![LR3 Side 13](/img/lr3/LR3%20(27).jpg)
+
+* One screw is plenty as it is just there to stop the brass nut from spinning.
+
+![LR3 Side 14](/img/lr3/LR3%20(31).jpg)
+
+* A completed XZ printed plate.
+
+![LR3 Side 15](/img/lr3/LR3%20(28).jpg)
+
+* With milled XZ plates, you will need to attach the stubs to the plate with an M5.
+
+![LR3 Side 16](/img/lr3/LR3%20(29).jpg)
+
+* The nuts gets seated in the printed stub.
+* Align the angled surfaces of both parts.
+
+![LR3 Side 17](/img/lr3/LR3%20(30).jpg)
+
+* Orientation of the stubs and XZ plates.
+
+![LR3 Side 18](/img/lr3/LR3%20(32).jpg)
+
+* The MGN12H bearing blocks get attached to the XZ plate.
+* If you are using the printed version, M3x10mm screws will fit.
+* If you are using a milled part follow the guidelines for thickness. Only use washers if necessary.
+
+![LR3 Side 19](/img/lr3/LR3%20(33).jpg)
+
+* Now is a good time to assure the linear guides are moving freely. If not, loosen the 4 small screws on the end of the bearing block a full turn. Move the bearing block back and forth and tighten the screws back up.
+* You can add a touch of a light oil or dab of the superlube, but it should not be necessary.
+* Keep the stops in the end until they are mounted to the YZ plates to avoid tiny bearings everywhere.
+
+![LR3 Side 20](/img/lr3/LR3%20(34).jpg)
+
+* With the rails mounted, make sure they are parallel by measuring how far apart they are at the top and bottom of travel at the ends.
+* Snug up the M3's. LocTite is not a bad idea here.
+
+![LR3 Side 21](/img/lr3/LR3%20(35).jpg)
+
+* As of 9/17/22 (If you bought YZ plates, any orders shipped after that date) you no longer need to add these three screws until attaching the beam. Skip this step.
+
+![LR3 Side 22](/img/lr3/LR3%20(36).jpg)
+
+* Use the small wood screws to attach the rails to the YZ plate.
+  * Start attaching the rails in the middle, one screw each. Loosely.
+  * Once you have a screw in each rail you can remove the stops.
+  * Keep adding screws and checking for smooth motion as you go.
+  * The hole in the XZ plate is there to let you access the middle screw.
+* If all is going well, snug up the wood screws into the YZ plate. Gentle here. Do not strip out the MDF/wood.
+
+![LR3 Side 23](/img/lr3/LR3%20(37).jpg)
+
+* Add the Z drive wires facing the back.
+* Use M5 screws here and snug it up a bit.
+
+#### Z End Stop
+
+![LR3 Z Stop 1](/img/lr3/LR3%20(38).jpg)
+
+* Attach Z Stop & Z Stop M parts with M5 screws and nuts.
+* Test to make sure the micro switch clicks before the XZ plate hits the top.
+* If not, the printed parts are vertically slotted to allow Z stop height to be adjusted.
+
+![LR3 Z Stop 2](/img/lr3/LR3%20(39).jpg)
+
+* The endstop wires will run through a small slot in the Y drive. Make sure they are free to move and not pinched.
+* Keeping the printed parts aligned with the plates keeps it looking nice.
+
+![LR3 Z Stop 3](/img/lr3/LR3%20(40).jpg)
+
+* Insert the Y drive. It goes in with a 90 degree twist.
+* Make sure the endstop wires are free moving.
+* Snug the screws.
+
+#### Wheels
+
+![LR3 Wheels 1](/img/lr3/LR3%20(41).jpg)
+
+* 608-2RS and bolts, Bearing Wheel Bracket Front & Rear.
+
+![LR3 Wheels 2](/img/lr3/LR3%20(42).jpg)
+
+* Preferred "wheels"
+* Seat the bolt so the head and nut are making contact, but do not tighten. This is just an axle.
+* Pay attention to the bolt orientation. The nut goes in the deeper side.
+
+![LR3 Wheels 3](/img/lr3/LR3%20(43).jpg)
+
+* Optional Urethane Wheel brackets [Link](https://www.printables.com/model/211714-lr3-60mm-wheel-brackets)
+* Use spacers to prevent over tightening
+
+![LR3 Wheels 4](/img/lr3/LR3%20(44).jpg)
+
+* Wheels installed; bolts in, nuts out. Snug these four screws.
+
+![LR3 Wheels 5](/img/lr3/LR3%20(45).jpg)
+
+#### Rail Rollers
+
+![LR3 Rail Rollers 1](/img/lr3/LR3%20(46).jpg)
+
+* Front and Rear Rail Roller, bolts and bearings.
+
+![LR3 Rail Rollers 2](/img/lr3/LR3%20(47).jpg)
+
+* Insert the bearings, and seat the bolts.
+* No need to snug as these are just axles.
+* Bolt orientation is important here. One bolt is facing up and the nuts are tricky to slide into the top.
+
+![LR3 Rail Rollers 3](/img/lr3/LR3%20(48).jpg)
+
+* Side Plates are done!
+* Roll them around on your table making motor noises to make sure they work right.
+
+---
+
+### Beam Assembly
+
+* If you already have your strut plates cut, use this as a loose guide.
+* Install the strut plates loosely at first to get everything aligned then go back and snug them all up.
+
+![LR3 Beam 1](/img/lr3/LR3%20(49).jpg)
+
+* Building the beam includes the X rails, braces (optionally two with higher infill for the ends), temporary strut plates, and a lot of M5's.
+
+![LR3 Beam 2](/img/lr3/LR3%20(50).jpg)
+
+* Fit your rail together. Make sure the end two plates have a top printed surface facing out.
+* Sliding the braces on your rail is preferred over snapping them in. This keeps a sharp clamp tip.
+
+![LR3 Beam 3](/img/lr3/LR3%20(51).jpg)
+
+* Next step is to add the front temporary strut plates.
+* Remember, initially you will be leaving the screws loose.
+* Roughly space the rest of the braces equally down the beam.
+
+![LR3 Beam 4](/img/lr3/LR3%20(53).jpg)
+
+* Loosely add the rest of the front screws, lightly engaging the Nyloc just so they do not fall out.
+
+![LR3 Beam 5](/img/lr3/LR3%20(54).jpg)
+
+* Very loosely add the bottom screws, again, lightly engaging the Nyloc.
+
+![LR3 Beam 6](/img/lr3/LR3%20(55).jpg)
+
+* Now add the rear temporary strut plates and optionally, the hose hangers.
+* You can snug up the temp plate screws and the hose hanger screws.
+
+![LR3 Beam 7](/img/lr3/LR3%20(52).jpg)
+
+* Now go back and snug up the front clamps.
+* The key here is just lightly engaged, *There will be a gap*, and the rails will be able to spin if you try.
+* The clamps do not do very much other than account for slight rail size differences. Do not over tighten.
+
+![LR3 Beam 8](/img/lr3/LR3%20(56).jpg)
+
+* Add the LR-Core to the beam and set the tension of the lower two bolts.
+* Too loose and the core can move and you will hear bearings clicking on the rails.
+* Too tight and you will feel the LR-Core hesitate over each brace. More is not better here.
+* Typically, little to no extra tension is needed and it is best just to seat the nuts gently.
+
+![LR3 Beam 9](/img/lr3/LR3%20(57).jpg)
+
+* You can add the side plates using the 6-M5 screws.
+* Snug these up.
+* Make sure both sides move up and down pretty freely, as long as gravity pulls them all the way down you are good to go here.
+* Measure the heel and toe distances across your machine, make sure they are equal.
+
+---
+
+### X Belt
+
+![LR3 X Belt 1](/img/lr3/LR3%20(58).jpg)
+
+* Run your X belt through the X Drive.
+* It is a good idea to run it as shown and cut it when you know exactly how long to make it.
+
+![LR3 X Belt 2](/img/lr3/LR3%20(59).jpg)
+
+* To secure the ends you can make a small fold, or use a 4-5 tooth cutoff, and pull it back into the slot.
+
+![LR3 X Belt 3](/img/lr3/LR3%20(60).jpg)
+
+* Leave a bit of room to pull it out if needed.
+
+![LR3 X Belt 4](/img/lr3/LR3%20(61).jpg)
+
+* For the X tensioner, insert belt through the side, then loop around and back on itself to set the length.
+
+![LR3 X Belt 5](/img/lr3/LR3%20(62).jpg)
+
+* Add the X tensioner to the XZ plate and set the tension just below where it makes a sound when you pluck it.
+* Make sure to leave ~4mm (1/8") or more gap between the plate and tensioner to adjust this later if needed.
+
+![LR3 X Belt 6](/img/lr3/LR3%20(63).jpg)
+
+* Add your tool mount of choice.
+* Snug up the vacuum side of the mount and leave the stepper side loose.
+
+![LR3 X Belt 7](/img/lr3/LR3%20(64).jpg)
+
+* Stand back and admire what you have accomplished.
+
+---
+
+### Y Rail
+
+![LR3 Dimensions](/img/lr3/LR3%20Dims.jpg)
+
+* The calculator dimensions are for edge to edge table use. If you added extra width divide it by two and place your "Front Y Belt Holder Base Right".
+* From there the edge of your Rail blocks get placed 61.75mm in from that.
+
+![LR3 Y Rail 1](/img/lr3/LR3%20(65).jpg)
+
+* I pre-drill all the rail block holes in the center to have some adjustment if needed.
+* The center of the rail block slots are 44.7mm in from the line set in the previous step for a total of 106.45mm in from the edge of your Y belt block.
+
+![LR3 Y Rail 2](/img/lr3/LR3%20(66).jpg)
+
+* Place the rail blocks no further than 200mm (8") apart.
+
+![LR3 Y Rail 3](/img/lr3/LR3%20(67).jpg)
+
+* You can measure out the other Y belt holder block or wait to use the fully assembled machine to mark it with the Y drive.
+
+![LR3 Y Rail 4](/img/lr3/LR3%20(68).jpg)
+
+* Another view of that.
+
+![LR3 Y Rail 5](/img/lr3/LR3%20(69).jpg)
+
+* Place the Y tension bases inline with the front blocks and far enough in to act as a hard stop not to drive your machine off the edge of the table.
+* 30mm in from the edge is good.
+
+---
+
+### Wire Routing
+
+![LR3 Wiring 1](/img/lr3/LR3%20(70).jpg)
+
+* Wire routing is pretty free form with lots of options. Here is how I do it.
+* Labeling your wires is great idea.
+
+![LR3 Wiring 2](/img/lr3/LR3%20(71).jpg)
+
+* Be sure to tape or secure any connections.
+* I find it best to start by running the shortest wire first.
+
+![LR3 Wiring 3](/img/lr3/LR3%20(72).jpg)
+
+* The extensions will be needed for the wires on the rail side.
+* Make sure you have full range of Z motion and the wires don't catch anywhere.
+
+![LR3 Wiring 4](/img/lr3/LR3%20(73).jpg)
+
+* Full shot of the wires ran and the excess folded over in the hose holders.
+* The X axis wires need to have full range of motion so that means securing them just short of the half way point.
+
+![LR3 Wiring 5](/img/lr3/LR3%20(74).jpg)
+
+* I temporarily added the power supply on the wire bundle.
+* After the strut plates are cut, I prefer to mount it inside the beam.
+
+![LR3 Wiring 6](/img/lr3/LR3%20(75).jpg)
+
+* Now you can add the lead screws.
+* Make sure the Z axis has full range of motion and does not hit the coupler when at the bottom of motion.
+
+---
+
+### Y Belt
+
+![LR3 Y Belt 1](/img/lr3/LR3%20(76).jpg)
+
+* When running the Y belts Feed the belt through the Y drive and secure into the front blocks first.
+* Loop the belt over with enough room to remove it later if needed.
+
+![LR3 Y Belt 2](/img/lr3/LR3%20(77).jpg)
+
+* The rear blocks get a nut inserted and are quick release and adjustable.
+* The right tension is tight, but just before it starts to sound like a bass guitar, if plucked. 6-10lbs tension is what you're looking for.
+
+![LR3 Y Belt 3](/img/lr3/LR3%20(78).jpg)
+
+* Rear block assembled.
+
+![LR3 Y Belt 4](/img/lr3/LR3%20(79).jpg)
+
+* Now do the other side.
+
+![LR3 Y Belt 5](/img/lr3/LR3%20(80).jpg)
+
+* You nervous yet? It is time to fire it up!
+
+---
+
+## Getting Started
+
+At this point you should be able to power up and give your build a little test move.
+
+### Initial Squaring
+
+To square the machine you need to mark 4 points and measure the diagonal. This is how we set the Y axis homing to square the machine relative to the rail. You will probably need to repeat this a couple times to get it under 1mm difference.
+
+You can also automate this process with Jamie's ["Squareness Marks"](https://vector76.github.io/gcode_tpgen/) test.
+
+![LR3 Squaring 1](/img/lr3/LR3%20(81).jpg)
+
+* I use tape, so I can be sure I am using the correct mark.
+* Home the X and Y axis.
+* Use the Z axis to mark a small dot at 0,0.
+
+![LR3 Squaring 2](/img/lr3/LR3%20(82).jpg)
+
+* Now drive the machine to your X axis furthest point.
+* Use the Z to mark the dot.
+
+![LR3 Squaring 3](/img/lr3/LR3%20(83).jpg)
+
+* Drive to the Y extreme and repeat the process for the back two corners.
+
+![LR3 Squaring 4](/img/lr3/LR3%20(84).jpg)
+
+* Now measure the diagonals to the best of your ability. Note the longer one, and subtract to find the difference. Under 1mm is very good.
+
+If you are over 1mm in difference you can use the terminal and add a homing offset. "M666 Y0.5" will move your Y1 stepper 0.5mm away from the stop block after it homes. "M666 Y-0.5" will move your Y2 stepper away instead. You want to move the longer dimension side away from the block. Use "M500" to save it to the EEPROM. Re-home X and Y and test it again.
+
+---
+
+### Z Leveling
+
+![LR3 Z Level 1](/img/lr3/LR3%20(85).jpg)
+
+* Z leveling is a bit easier than the Y axis if you have a touch plate.
+
+![LR3 Z Level 2](/img/lr3/LR3%20(86).jpg)
+
+Steps:
+
+1. Home all three of your axis.
+2. Get Readings - If using a touch plate, probe by using G38.2 Z0. Take note of the Z position (M114). Move to the other X extreme and probe again. Take the difference.
+3. Make adjustments - Use "M666 Z0.5" (number is in mm). Save with M500 after each adjustment. Home all three axis and check your work.
+
+![LR3 Z Level 3](/img/lr3/LR3%20(87).jpg)
+
+---
+
+### Making the Strut Plates
+
+At this point you should be ready to make some cuts. To be certain it all goes as planned, you can make a test cut in high density foam, or simply make an air cut.
+
+The three strut plates should be 6.35mm (1/4") or thinner MDF or similarly rigid material. You will want to cut each plate as close to the side of your build as you can.
+
+![LR3 Strut Cut 1](/img/lr3/LR3%20(88).jpg)
+
+* Getting ready to make your first cuts all starts with loading the material.
+* Make sure the edge is behind your Endmill in the Y direction and parallel with the edge in the X direction.
+
+![LR3 Strut Cut 2](/img/lr3/LR3%20(89).jpg)
+
+* Checking the front and back edges relative to the table.
+
+![LR3 Strut Cut 3](/img/lr3/LR3%20(90).jpg)
+
+* Secure the material and make sure your means will not interfere with the core as it passes over.
+
+![LR3 Strut Cut 4](/img/lr3/LR3%20(91).jpg)
+
+* This is what a finished cut looks like. All parts are held in place with small tabs of material that can be cut with a saw or utility knife.
+* Do this two more times.
+
+---
+
+### Disassembly
+
+![LR3 Disassembly 1](/img/lr3/LR3%20(92).jpg)
+![LR3 Disassembly 2](/img/lr3/LR3%20(93).jpg)
+![LR3 Disassembly 3](/img/lr3/LR3%20(94).jpg)
+![LR3 Disassembly 4](/img/lr3/LR3%20(95).jpg)
+![LR3 Disassembly 5](/img/lr3/LR3%20(96).jpg)
+![LR3 Disassembly 6](/img/lr3/LR3%20(97).jpg)
+
+---
+
+### Final Assembly
+
+![LR3 Final 1](/img/lr3/LR3%20(98).jpg)
+
+* Measure the heel and toe distances across your machine, make sure they are equal. Problems can arise if your rails are too long after you install the strut plates.
+
+![LR3 Final 2](/img/lr3/LR3%20(99).jpg)
+![LR3 Final 3](/img/lr3/LR3%20(100).jpg)
+
+---
+
+### Vacuum
+
+![LR3 Vacuum](/img/lr3/LR3_Fancy%20(8).jpg)
+
+[Quick release coupler](https://www.printables.com/model/168405-vacuum-hose-coupler) for 1.5" hose.
+
+### Wiring
+
+Next step is wiring the steppers.
+
+### Firmware
+
+Dual endstop LowRider "DualLR" firmware recommended for ultimate accuracy and precision. This requires at least a 5 driver control board. This allows you to align the Y axis and Z axis using dual endstops.
+
+The standard MPCNC firmware will work with any board on the LowRider if you are not using endstops or wired in series (using a 4 driver board). You will just use hardstops like the LR2 did.
+
+## Go get it dirty, be safe, have fun!

@@ -1,0 +1,223 @@
+---
+title: Calibration
+sidebar_position: 6
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Initial Calibration
+
+## Belt Calibration
+
+The GT2 belts actually vary in pitch slightly. On smaller machines you might not notice; on a full
+sheet machine it can show up. Luckily it is a simple test to do on initial setup or if you change
+your belts. Over 2400 mm it can vary up to ±6 mm.
+
+Mark a spot near the closest position on your table, move a known distance, and mark another point
+at the far end. Then adjust steps per millimeter to match your belts. Only need to do this on one
+axis — your longest, for the most accuracy — and it applies to both X and Y if you're using the
+same belts.
+
+The math: `(Distance told / Distance actually moved) × Steps per mm = new Steps per mm`
+
+Example: `(2400/2394.2) × 50 = 50.121 steps`
+
+On Jackpot boards: go into `config.yaml` and change both X and Y `steps_per_mm: 50.000` to the
+new value. Use the save macro and reboot. Test the new settings.
+
+I prefer a [V-Bit](https://www.v1e.com/products/1-8-45-degree-v-bit) in the router, but you can
+use the pen mount to mark a small dot.
+
+![Belt calibration tape](/img/lowrider/v4/belt1.jpg)
+
+* Use tape at each end so you can be sure you're using the correct mark.
+* Home X and Y. Use the Z axis to mark a small dot near your table edge.
+* Move your machine to the far end, keep track of how far you asked it to move, and make another mark.
+* Move the CNC out of the way.
+* Measure these marks to the best of your ability.
+
+---
+
+![Belt calibration dot](/img/lowrider/v4/belt2.jpg)
+
+* Here is what the dot looks like from a V-bit.
+* Get a helper to hold one end while you read the other.
+* Verify your new settings — usually one try is all it takes, and this should not change.
+
+---
+
+## Squaring
+
+To square the machine, mark 4 points and measure the diagonal. This is how we set the Y axis to
+square the machine relative to the rail every time you home. You will likely need to repeat this
+a couple of times to get under 1 mm difference.
+
+You can use a [V-Bit](https://www.v1e.com/products/1-8-45-degree-v-bit) to pop a tiny hole into
+tape, or use the pen mount. Here is sample G-code you can edit for your build size:
+
+```
+$H ;Home all three axes
+G1 X30 Y30 F6000 ;Move to starting corner
+G1 Z-98 F6000 ;Move down to mark first hole
+G1 Z-78 F600 ;Lift Z axis up before it moves
+G1 X1190 F6000 ;Move to right side
+G1 Z-98 F600
+G1 Z-78
+G1 Y2400 F6000 ;Move to back right
+G1 Z-98 F600
+G1 Z-78
+G1 X30 F6000 ;Move to back left
+G1 Z-98 F600
+G1 Z-78
+G1 Y1200 Z0 F6000 ;Move out of the way so you can measure
+```
+
+---
+
+![Squaring corner 1](/img/lowrider/v4/sq1.jpg)
+
+* Use tape to mark, so you can change it out for each test.
+* Home X and Y. Use the Z axis to mark a dot at 0,0.
+
+---
+
+![Squaring X extreme](/img/lowrider/v4/sq2.jpg)
+
+* Drive the machine to your X axis furthest point and mark the dot.
+
+---
+
+![Squaring Y extreme](/img/lowrider/v4/sq3.jpg)
+
+* Drive to the Y extreme and repeat for the back two corners.
+
+---
+
+![Squaring diagonal](/img/lowrider/v4/sq4.jpg)
+
+* Measure the diagonal to the best of your ability.
+
+---
+
+![Squaring other diagonal](/img/lowrider/v4/sq4.jpg)
+
+* Measure the other diagonal. Note the longer one and subtract to find the difference. Under 1 mm
+  is very good.
+
+---
+
+If you have a difference, you have a parallelogram instead of a rectangle. Corrections should be
+made if you are over 2 mm of difference, depending on use case. A good first guess for your offset
+is half the difference. The corner nearest the endstop associated with the longer diagonal needs to
+move further from the Y hard stop. This is done in firmware.
+
+Coarse adjustments can be made with the Y-axis endstop screws. Too far in: hits the hard stops
+before the switches. Too far out: risk of popping the endstop levers.
+
+<Tabs>
+  <TabItem value="jackpot" label="JackPot CNC Controller">
+
+In the WebUI you can add to your Y axis pull-off distance to correct any skew. Back on the main
+screen, use the **Save** macro to make changes stick after a reboot. This is a little different on
+UI V2 vs V3 — the important part is using the save macro.
+
+  </TabItem>
+  <TabItem value="skr" label="SKR Pro / Marlin">
+
+Use the terminal on your SKR Pro or a USB connection with Repetier Host to add a homing offset.
+`M666 Y0.5` moves your Y1 stepper 0.5 mm away from the stop block after it homes.
+`M666 Y-0.5` moves your Y2 stepper instead. Move the longer-dimension side away from the block.
+Use `M500` to save to EEPROM. Re-home X and Y and test again.
+
+  </TabItem>
+</Tabs>
+
+<details>
+<summary>If you prefer to use a pen, use Jamie's Automated "Squareness Marks"</summary>
+
+You can also automate this squaring process with Jamie's
+["Squareness Marks"](https://vector76.github.io/gcode_tpgen/) G-code generator.
+
+- Home the X and Y axis.
+- Start with `G92 X0 Y0 Z0` — where the tip is will be 0,0,0. Start the tip just above the paper.
+- **Z level for tip-down** — Make this number more negative if some marks are not hitting the paper.
+  Use as light a touch as possible.
+- **Z level for tip-up** — Go as high as needed so the tip does not drag.
+- **Feedrate** — The default is safe.
+- **Extents** — Set the dimensions of your table. The further apart the marks, the more accurate.
+- Note: the V-bit method is a bit more accurate because a pen can deflect slightly.
+
+Old video of this on an SKR Pro:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w5H1AZ40YHk?si=GJcbqE_V3bhuVvV1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</details>
+
+---
+
+## Z Leveling
+
+Z Leveling makes sure the Beam is level with the work surface. The Z endstops are adjustable so
+there can be slight differences in each side's homing location. Getting under 0.1 mm difference is
+pretty easy with this method.
+
+You will need to redo this after rebuilding your beam with the strut plates, but it will likely be
+very close. When the beam gets rebuilt you can surface your entire work surface.
+
+Take a few measurements at each end in the same place, average each side's position, then adjust
+the Z offset for the more-negative side (more negative = endstop triggered higher). After
+adjustments, save config, reboot, and test again.
+
+G-code to automate this on the Jackpot board — run several times at each position and average:
+
+```
+$HZ
+G10 L2 P0 Z0 ;set Z to zero
+G1 Z-70 F800 ;move down fast
+G38.2 Z-100 F60 ;probe slow
+```
+
+The advanced way in FluidNC: run [Jason's G-code script](https://forum.v1e.com/t/gcode-variables-and-loops/41588/17?u=vicious1).
+
+---
+
+![Z leveling touch plate](/img/lowrider/v4/levelz1.jpg)
+
+* Z leveling is easier if you have a touch plate. You can also use any block or piece of paper as a
+  feeler gauge.
+* Move 30–50 mm in from each edge when testing.
+* Tape the touch plate down to increase accuracy.
+* Home the Z axis.
+* Set Z to 0: in FluidNC `G10 L2 P0 Z0`; in Marlin `G92 Z0`.
+* Probe slowly to the touch plate. In FluidNC: `G38.2 Z-100 F60`; in Marlin: `G38.2 Z0`.
+* Note the current Z position. Do this at least 3 times on each side and average.
+
+---
+
+![Z leveling FluidNC position](/img/lowrider/v4/levelz3.png)
+
+* In FluidNC this is your current Z position.
+* In Marlin this shows on your LCD screen or G-code sender.
+
+---
+
+![Z leveling repeat other side](/img/lowrider/v4/levelz2.jpg)
+
+* Repeat for the other side.
+* Always hold or tape down your touch plate for best accuracy.
+* Again, repeat 3 times and average.
+
+---
+
+Take the difference and adjust the more-negative side. If Z0 = –97 and Z1 = –98, the difference is
+1 mm. Add 1 mm to the pull-off setting for Z1. Default in FluidNC is 4 mm pull-off, so change to
+5 mm. We need at least 4 mm for the trigger to reset — never make it smaller. Save, power cycle,
+then retest each side once to verify (under 0.5 mm for common use).
+
+For Marlin: adjust with `M666 Z1` (moves right side down) or `M666 Z-1` (moves left side down),
+then `M500` to save. Power cycle and retest.
+
+---
+
+**Next:** [Making Strut Plates](./strut-plates)
